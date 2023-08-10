@@ -227,9 +227,6 @@ input[type=submit]:hover {
         font-size: 1.3rem;
         transition: .5s cubic-bezier(1, 0.575, 0.9, 3);
     }
-    .div img{
-    
-
     .menu_mobile {
         height: 100%;
         width: 0;
