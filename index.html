@@ -22,12 +22,16 @@
                 <img src="images/Logotype_Mecadom_png_Fichier 3.png" alt=" Logo MECADOM">
             </div>
             <button onclick="showMenu()" id="hamburger_menu" class="button_menu">
-                <i class='bx bx-menu'></i>
+                <i id="bxBtnmenu" class='bx bx-menu'></i>
+                <i id="bxBtnx" style="display: none;" class='bx bx-x'></i>
             </button>
             <div class="menu ">
                 <a href="#" class="link-menu">Accueil</a>
                 <a href="#" class="link-menu">Services</a>
                 <a href="#" class="link-menu">Produits</a>
+                <div class="div">
+                    <img src="images/Logotype_Mecadom_png_Fichier 3.png" alt=" Logo MECADOM">
+                </div>
             </div>
         </nav>
     </header>
@@ -36,14 +40,15 @@
 
         <div class="left-section">
             <form action="">
-                <h1>CONNEXION</h1>
+                <h1>Connexion</h1>
 
                 <div class="fields">
                     <input type="text" placeholder="Email">
 
                     <input type="password" placeholder="Mot de passe">
 
-                    <div class="link-connexion"><a href="#">Mot de passe oublié?</a>
+                    <div class="link-connexion">
+                        <a href="#">Mot de passe oublié?</a>
                         <a href="#">S'enregistrer</a>
                     </div>
                 </div>
@@ -93,10 +98,10 @@
 
     //menu dropdown Script
     const menu = document.querySelector('.menu');
-
     function showMenu() {
         var btnMenu = document.getElementById("hamburger_menu");
         menu.classList.toggle("menu_mobile");
+
     }
 </script>
 
