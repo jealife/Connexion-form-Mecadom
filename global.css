@@ -32,7 +32,7 @@ nav div:nth-child(1)>img {
     width: 150px;
 }
 
-.div img{
+.div img {
     display: none;
     width: 90px;
 }
@@ -134,7 +134,8 @@ form {
     border-radius: 25px;
     box-shadow: 0px 42px 50px 0px #26264648;
 }
-form h1{
+
+form h1 {
     color: #1a237e;
     text-transform: capitalize;
 }
@@ -155,30 +156,38 @@ form .fields {
     transition: .5s;
     color: #1a237e;
 }
-.link-connexion a{
+
+.link-connexion a {
     transition: all .5s ease-in-out;
 }
 
 
 .link-connexion a:nth-child(2) {
-    border-bottom: #1a227e7c 0.5px  solid;
+    border-bottom: #1a227e7c 0.5px solid;
 }
 
 .link-connexion a:hover {
     color: #0015ff;
 }
 
-form .fields input {
+form .fields input[type=text],
+.fields input[type=password] {
     padding: .8rem 1rem;
     border: none;
     outline: solid .5px #161d2c44;
     border-radius: 25px;
     transition: .5s;
+    font-size: 1rem;
+    color: #12181f;
+    font-weight: 500;
+    width: 100%;
 }
 
-.fields input:focus {
+.fields input[type=text]:focus,
+.fields input[type=password]:focus {
     outline: solid .5px #242fac;
     box-shadow: 0px 0px 15px 0px #2f40fc2a;
+
 }
 
 input[type=submit] {
@@ -198,6 +207,38 @@ input[type=submit]:hover {
     transform: translateY(3px);
     background-color: #ffc107;
     box-shadow: 0px 10px 15px 0px #ffd04588;
+}
+
+.password-fild {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    width: 100%;
+}
+
+.password-fild  .bx{
+    margin-top: -30px;
+    margin-right: 20px;
+    cursor: pointer;
+    cursor: pointer;
+    font-size: .8prem;
+}
+
+.show-password {
+    margin-top: 5px;
+    padding: 0.52rem .5rem 0 0;
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    gap: 5px;
+    width: 100%;
+    font-size: .8rem;
+    align-items: center;
+
+}
+
+.show-password input[type=checkbox] {
+    cursor: pointer;
 }
 
 
@@ -227,6 +268,7 @@ input[type=submit]:hover {
         font-size: 1.3rem;
         transition: .5s cubic-bezier(1, 0.575, 0.9, 3);
     }
+
     .menu_mobile {
         height: 100%;
         width: 0;

@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:image"
-    content="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bSVDMyVBOWNhbmljaWVufGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60">
-<meta property="og:image"
-    content="https://meca-dom-plus.vercel.app/assets/images/Logo_Mecadom.png">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        content="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bSVDMyVBOWNhbmljaWVufGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60">
+    <meta property="og:image" content="https://meca-dom-plus.vercel.app/assets/images/Logo_Mecadom.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion | MECADOM </title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,9 +44,19 @@
                 <h1>Connexion</h1>
 
                 <div class="fields">
-                    <input type="text" placeholder="Email">
+                    <input type="text" name="email" autofocus="" autocapitalize="none" autocomplete="email"
+                        placeholder="Email" required>
 
-                    <input type="password" placeholder="Mot de passe">
+                    <div class="password-fild">
+
+                        <input type="password" id="password" placeholder="Mot de passe" name="password"
+                            autocomplete="current-password" required="">
+                        <!-- <i class='bx bx-show' id="togglePassword" ></i> -->
+                        <div class="show-password">
+                            <input type="checkbox" onclick="showPassword()">
+                            <span>Voir</span>
+                        </div>
+                    </div>
 
                     <div class="link-connexion">
                         <a href="#">Mot de passe oublié?</a>
@@ -67,44 +76,37 @@
     </main>
 </body>
 
-
-
-
-<!-- <script>
-
-
-
-    //menu dropdown Script
-
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const mobileMenu = document.querySelector('.mobile_menu');
-
-    hamburgerMenu.addEventListener('click', () => {
-        mobileMenu.classList.remove('none');
-    });
-
-
-    document.addEventListener("click", (event) => {
-        const isClickInsideDropdown = mobileMenu.contains(event.target);
-        const ismenuclicked = showMenu.contains(event.target);
-        if (!isClickInsideDropdown && !ismenuclicked) {
-            mobileMenu.classList.add('hide');
-            mobileMenu.classList.add('menu-dropdown--fade-in');
-        }
-
-    });
-</script> -->
 <script>
 
 
 
-    //menu dropdown Script
+    //menu mobile Script
     const menu = document.querySelector('.menu');
     function showMenu() {
         var btnMenu = document.getElementById("hamburger_menu");
         menu.classList.toggle("menu_mobile");
 
     }
+    // show/hide paswword scrip 
+    function showPassword() {
+        var passWord = document.getElementById("password");
+        if (passWord.type === "password") {
+            passWord.type = "text";
+        } else {
+            passWord.type = "password";
+        }
+    }
+
+    // const togglePassword = document.querySelector('#togglePassword');
+    // const password = document.querySelector('#password');
+
+    // togglePassword.addEventListener('click', function (e) {
+    //     // toggle the type attribute
+    //     const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    //     password.setAttribute('type', type);
+    //     // toggle the eye slash icon
+    //     togglePassword.classList.toggle('bx bx-hide');
+    // });
 </script>
 
 </html>
