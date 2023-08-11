@@ -355,6 +355,7 @@ input[type=submit]:hover {
     
     .name{
         flex-direction: column;
+        gap: 24px;
     }
 }
 
