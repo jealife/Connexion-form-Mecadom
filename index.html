@@ -29,7 +29,7 @@
                 <i id="bxBtnmenu" class='bx bx-menu'></i>
                 <i id="bxBtnx" style="display: none;" class='bx bx-x'></i>
             </button>
-            <div class="menu ">
+            <div class="menu">
                 <a href="https://meca-dom-plus.vercel.app/" class="link-menu">Accueil</a>
                 <a href="#" class="link-menu">Services</a>
                 <a href="#" class="link-menu">Produits</a>
@@ -51,10 +51,10 @@
 
                         <input type="password" id="password" placeholder="Mot de passe" name="password"
                             autocomplete="current-password" required="">
-                        <!-- <i class='bx bx-show' id="togglePassword" ></i> -->
+                        <!-- <i class='bx bx-show' id="togglePassword"></i> -->
                         <div class="show-password">
                             <input type="checkbox" onclick="showPassword()">
-                            <span>Voir</span>
+                            <span id="tooglePasswordindicator">Voir</span>
                         </div>
                     </div>
 
@@ -88,12 +88,17 @@
 
     }
     // show/hide paswword scrip 
+    const tooglePasswordindicator = document.getElementById('tooglePasswordindicator');
+    // const checkboxContainer = document.querySelector('.show-password')
+   var passWord = document.getElementById("password");
+
     function showPassword() {
-        var passWord = document.getElementById("password");
         if (passWord.type === "password") {
             passWord.type = "text";
+            tooglePasswordindicator.innerText = "Masquer"
         } else {
             passWord.type = "password";
+            tooglePasswordindicator.innerText = "Voir"
         }
     }
 
