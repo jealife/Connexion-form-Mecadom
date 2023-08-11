@@ -41,30 +41,52 @@
 
         <div class="left-section">
             <form action="">
-                <h1>Connexion</h1>
+                <h1 id="formTitle">Connexion</h1>
 
-                <div class="fields">
-                    <input type="text" name="email" autofocus="" autocapitalize="none" autocomplete="email"
-                        placeholder="Email" required>
+                <div class="login-sign-up">
+                    <div class="login" id="login">
+                        <input type="email" name="email" autofocus="" autocapitalize="none" autocomplete="email"
+                            placeholder="Email" required>
 
-                    <div class="password-fild">
+                        <div class="password-field">
 
-                        <input type="password" id="password" placeholder="Mot de passe" name="password"
-                            autocomplete="current-password" required="">
-                        <!-- <i class='bx bx-show' id="togglePassword"></i> -->
-                        <div class="show-password">
-                            <input type="checkbox" onclick="showPassword()">
-                            <span id="tooglePasswordindicator">Voir</span>
+                            <input type="password" id="password" placeholder="Mot de passe" name="password"
+                                autocomplete="current-password" required="">
+                            <!-- <i class='bx bx-show' id="togglePassword"></i> -->
+                            <div class="show-password">
+                                <input type="checkbox" onclick="showPassword()">
+                                <span id="tooglePasswordindicator">Voir</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="link-connexion">
+                    <div class="sign-up" id="signUp">
+                        <div class="name">
+                            <input type="text" name="nom  placeholder=" Nom" id="lname" required>
+                            <input type="text" name="prenom" placeholder="Prénom" id="fname" required>
+                        </div>
+                        <input type="text" name="email" autocomplete="email" placeholder="Email" id="email" required>
+                        <div class="password-field">
+
+                            <input type="password" id="PasswordSignUp" placeholder="Mot de passe" name="password"
+                                autocomplete="current-password" required="">
+                            <!-- <i class='bx bx-show' id="togglePassword"></i> -->
+                            <div class="show-password">
+                                <input type="checkbox" onclick="showPasswordSignUp()">
+                                <span id="tooglePasswordindicatorSignUp">Voir</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="link-connexion" id="linkLogin">
                         <a href="#">Mot de passe oublié?</a>
-                        <a href="#">S'enregistrer</a>
+                        <span id="signUplink" onclick="toggleckeckShow()">S'enregistrer</span>
                     </div>
                 </div>
 
-                <input type="submit" value="Se connecter">
+                <input type="submit" value="Se connecter" id="loginBtn">
+                <input type="submit" value="S'enregister" id="signupbtn">
+                <input type="checkbox" id="ckeckShow" style="visibility: hidden;">
             </form>
         </div>
 
@@ -74,44 +96,102 @@
 
 
     </main>
-</body>
 
-<script>
-
+    <script>
 
 
-    //menu mobile Script
-    const menu = document.querySelector('.menu');
-    function showMenu() {
-        var btnMenu = document.getElementById("hamburger_menu");
-        menu.classList.toggle("menu_mobile");
 
-    }
-    // show/hide paswword scrip 
-    const tooglePasswordindicator = document.getElementById('tooglePasswordindicator');
-    // const checkboxContainer = document.querySelector('.show-password')
-   var passWord = document.getElementById("password");
+        //menu mobile Script
+        const menu = document.querySelector('.menu');
+        function showMenu() {
+            var btnMenu = document.getElementById("hamburger_menu");
+            menu.classList.toggle("menu_mobile");
 
-    function showPassword() {
-        if (passWord.type === "password") {
-            passWord.type = "text";
-            tooglePasswordindicator.innerText = "Masquer"
-        } else {
-            passWord.type = "password";
-            tooglePasswordindicator.innerText = "Voir"
         }
-    }
 
-    // const togglePassword = document.querySelector('#togglePassword');
-    // const password = document.querySelector('#password');
 
-    // togglePassword.addEventListener('click', function (e) {
-    //     // toggle the type attribute
-    //     const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-    //     password.setAttribute('type', type);
-    //     // toggle the eye slash icon
-    //     togglePassword.classList.toggle('bx bx-hide');
-    // });
-</script>
+
+        // toggle login signUp form 
+        const signUp = document.getElementById('signUp');
+        const login = document.getElementById('login');
+
+        const signupbtn = document.getElementById('signupbtn');
+        const loginBtn = document.getElementById('loginBtn');
+
+        const signUplink = document.getElementById('signUplink');
+        const ckeckShow = document.getElementById('ckeckShow');
+        
+
+
+        const formTitle = document.getElementById('formTitle')
+
+        
+        signUplink.addEventListener('click', toggleckeckShow=()=>{
+            if (ckeckShow.checked==true) {
+                ckeckShow.checked=false;
+            }else{
+                ckeckShow.checked=true;
+            }
+
+        }
+        )
+        
+        const toggleLoginSignUp = () => {
+            ckeckShow.checked=true;
+
+            if (ckeckShow.checked==true) {
+                login.style.display = "flex";
+                signUp.style.display = "none";
+                formTitle.innerText = "Connexion"
+                signupbtn.style.display = "none";
+                signUplink.innerText = "S'enregistrer";
+                loginBtn.style.display = "block";
+            }
+            else {
+                signupbtn.style.display = "block";
+                signupbtn.style.display = "block";
+                login.style.display = "none";
+                loginBtn.style.display = "none";
+                signUplink.innerText = "Se connecter";
+                signUp.style.display = "flex";
+            }
+
+
+        }
+        toggleLoginSignUp();
+
+        
+
+
+        // show/hide paswword scrip 
+        const tooglePasswordindicator = document.getElementById('tooglePasswordindicator');
+        const tooglePasswordindicatorSignUp = document.getElementById('tooglePasswordindicatorSignUp');
+        // const checkboxContainer = document.querySelector('.show-password')
+        var passWord = document.getElementById("password");
+        var PasswordSignUp = document.getElementById("PasswordSignUp");
+
+        function showPassword() {
+            if (passWord.type === "password") {
+                passWord.type = "text";
+                tooglePasswordindicator.innerText = "Masquer";
+            } else {
+                passWord.type = "password";
+                tooglePasswordindicator.innerText = "Voir";
+            }
+        }
+        function showPasswordSignUp() {
+            if (PasswordSignUp.type === "password") {
+                PasswordSignUp.type = "text";
+                tooglePasswordindicatorSignUp.innerText = "Masquer";
+            } else {
+                PasswordSignUp.type = "password";
+                tooglePasswordindicatorSignUp.innerText = "Voir";
+            }
+        }
+
+
+    </script>
+
+</body>
 
 </html>

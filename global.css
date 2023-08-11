@@ -126,8 +126,8 @@ form {
     /* width: 300px; */
     display: flex;
     flex-direction: column;
-    padding: 2rem 1rem;
-    height: 400px;
+    padding: 3rem 1.2rem;
+    height: max-content;
     width: 370px;
     text-align: center;
     justify-content: space-around;
@@ -140,13 +140,18 @@ form h1 {
     text-transform: capitalize;
 }
 
-form .fields {
+form  .login, .login-sign-up, .sign-up{
     display: flex;
     flex-direction: column;
     gap: 24px;
 
 }
-
+.login{
+    margin-top: 1.5rem;
+}
+.sign-up{
+    margin-top: 1rem;
+}
 .link-connexion {
     display: flex;
     /* width: max-content; */
@@ -162,7 +167,8 @@ form .fields {
 }
 
 
-.link-connexion a:nth-child(2) {
+.link-connexion span{
+    cursor: pointer;
     border-bottom: #1a227e7c 0.5px solid;
 }
 
@@ -170,8 +176,8 @@ form .fields {
     color: #0015ff;
 }
 
-form .fields input[type=text],
-.fields input[type=password] {
+form  input[type=text], input[type=email],
+ input[type=password] {
     padding: .8rem 1rem;
     border: none;
     outline: solid .5px #161d2c44;
@@ -183,14 +189,15 @@ form .fields input[type=text],
     width: 100%;
 }
 
-.fields input[type=text]:focus,
-.fields input[type=password]:focus {
+ input[type=text]:focus,
+ input[type=password]:focus, input[type=email]:focus {
     outline: solid .5px #242fac;
     box-shadow: 0px 0px 15px 0px #2f40fc2a;
 
 }
 
 input[type=submit] {
+    margin-top: 1rem;
     transition: all .3s;
     padding: .8rem 1rem;
     border: none;
@@ -209,14 +216,14 @@ input[type=submit]:hover {
     box-shadow: 0px 10px 15px 0px #ffd04588;
 }
 
-.password-fild {
+.password-field {
     display: flex;
     flex-direction: column;
     align-items: end;
     width: 100%;
 }
 
-.password-fild  .bx{
+.password-field  .bx{
     margin-top: -30px;
     margin-right: 20px;
     cursor: pointer;
@@ -241,6 +248,13 @@ input[type=submit]:hover {
 }
 
 
+
+/* signUp form  */
+.name{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
 
 /*Responsives*/
 @media (max-width: 768px) {
@@ -313,7 +327,6 @@ input[type=submit]:hover {
         margin-top: 2rem;
         width: 100%;
         min-width: 320px;
-        height: 380px;
         background: #ffffff80;
         border-radius: 16px;
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.267);
@@ -326,10 +339,22 @@ input[type=submit]:hover {
         width: 100%;
         padding: 0 25px;
     }
-
+    input[type=submit] {
+        margin: 1rem 0;
+    }
+    
 
 
 
 
 
 }
+
+
+@media (max-width: 425px) {
+    
+    .name{
+        flex-direction: column;
+    }
+}
+
