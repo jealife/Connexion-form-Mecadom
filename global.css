@@ -126,7 +126,7 @@ form {
     /* width: 300px; */
     display: flex;
     flex-direction: column;
-    padding: 3rem 1.2rem;
+    padding: 2rem 1.2rem 3rem 1.2rem;
     height: max-content;
     width: 370px;
     text-align: center;
@@ -167,7 +167,7 @@ form  .login, .login-sign-up, .sign-up{
 }
 
 
-.link-connexion span{
+.link-connexion span:nth-child(2){
     cursor: pointer;
     border-bottom: #1a227e7c 0.5px solid;
 }

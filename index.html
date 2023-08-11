@@ -62,7 +62,7 @@
 
                     <div class="sign-up" id="signUp">
                         <div class="name">
-                            <input type="text" name="nom  placeholder=" Nom" id="lname" required>
+                            <input type="text" name="nom" placeholder="Nom" id="lname" required>
                             <input type="text" name="prenom" placeholder="Prénom" id="fname" required>
                         </div>
                         <input type="text" name="email" autocomplete="email" placeholder="Email" id="email" required>
@@ -79,14 +79,17 @@
                     </div>
 
                     <div class="link-connexion" id="linkLogin">
-                        <a href="#">Mot de passe oublié?</a>
-                        <span id="signUplink" onclick="toggleckeckShow()">S'enregistrer</span>
+                        <a href="#">Mot de passe oublié ?</a>
+                        <span onclick="toggleckeckShow()">S'enregistrer</span>
+                    </div>
+                    <div class="link-connexion" id="linkSignUp">
+                        <span>Vous avez un compte ?</span>
+                        <span onclick="toggleckeckShowLogin()">Se connecter</span>
                     </div>
                 </div>
 
                 <input type="submit" value="Se connecter" id="loginBtn">
                 <input type="submit" value="S'enregister" id="signupbtn">
-                <input type="checkbox" id="ckeckShow" style="visibility: hidden;">
             </form>
         </div>
 
@@ -112,55 +115,52 @@
 
 
         // toggle login signUp form 
+        
         const signUp = document.getElementById('signUp');
         const login = document.getElementById('login');
+        const linkSignUp = document.getElementById('linkSignUp');
 
         const signupbtn = document.getElementById('signupbtn');
         const loginBtn = document.getElementById('loginBtn');
 
-        const signUplink = document.getElementById('signUplink');
-        const ckeckShow = document.getElementById('ckeckShow');
+        const formTitle = document.getElementById('formTitle');
         
 
+        const linkLogin = document.getElementById('linkLogin');
 
-        const formTitle = document.getElementById('formTitle')
+        linkSignUp.style.display = "none";
+        signUp.style.display = "none";
+        signupbtn.style.display = "none";
 
-        
-        signUplink.addEventListener('click', toggleckeckShow=()=>{
-            if (ckeckShow.checked==true) {
-                ckeckShow.checked=false;
-            }else{
-                ckeckShow.checked=true;
-            }
+        const toggleckeckShow = () => {
 
-        }
-        )
-        
-        const toggleLoginSignUp = () => {
-            ckeckShow.checked=true;
-
-            if (ckeckShow.checked==true) {
-                login.style.display = "flex";
-                signUp.style.display = "none";
-                formTitle.innerText = "Connexion"
-                signupbtn.style.display = "none";
-                signUplink.innerText = "S'enregistrer";
-                loginBtn.style.display = "block";
-            }
-            else {
-                signupbtn.style.display = "block";
-                signupbtn.style.display = "block";
-                login.style.display = "none";
-                loginBtn.style.display = "none";
-                signUplink.innerText = "Se connecter";
-                signUp.style.display = "flex";
-            }
+            let y = "S'enregister";
+            signupbtn.style.display = "block";
+            login.style.display = "none";
+            loginBtn.style.display = "none";
+            signUp.style.display = "flex";
+            linkSignUp.style.display = "flex";
+            linkLogin.style.display = "none";
+            formTitle.innerText = y;
 
 
         }
-        toggleLoginSignUp();
 
-        
+        const toggleckeckShowLogin = () => {
+            let x = "Connexion";
+            login.style.display = "flex";
+            signUp.style.display = "none";
+            signupbtn.style.display = "none";
+            formTitle.innerText = "Connexion"
+            loginBtn.style.display = "block";
+            linkSignUp.style.display = "none";
+            linkLogin.style.display = "flex"
+            ckeckShow.checked == false;
+            formTitle.innerText = x;
+
+        }
+
+
 
 
         // show/hide paswword scrip 
